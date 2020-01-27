@@ -1,0 +1,7 @@
+---
+- name: Start and enable MariaDB Service
+  service:
+    name: "{{ mariadb_service }}"
+    state: started
+    enabled: yes
+...

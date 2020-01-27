@@ -1,0 +1,14 @@
+---
+#MariaDB Repo for Mariadb version 10.4
+#link for MariiiaDB repository https://downloads.mariadb.org/mariadb/repositories/#distro=RedHat&distro_release=rhel7-amd64--rhel7&mirror=cnrs&version=10.4
+mariadb_repo: http://yum.mariadb.org/10.4/centos7-amd64
+mariadb_gpgkey: https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+#
+#
+packages:
+  - MariaDB-server
+  - MariaDB-client
+  - MySQL-python
+#
+#
+mariadb_service: mariadb

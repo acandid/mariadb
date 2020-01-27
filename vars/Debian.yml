@@ -1,0 +1,10 @@
+---
+#Link for Debian repo https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&distro_release=buster--buster&mirror=cnrs&version=10.4
+mariadb_repo: "http://ftp.igh.cnrs.fr/pub/mariadb/repo/10.4/debian buster main"
+#
+packages:
+  - mariadb-server-10.4
+  - mariadb-client-10.4
+  - python-mysqldb
+#
+mariadb_service: mariadb

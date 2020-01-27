@@ -1,0 +1,31 @@
+---
+# tasks file for mariadb
+- name: Include variables
+  include_vars: "{{ ansible_os_family }}.yml"
+#
+- name: Include Credentials variables
+  include_vars: mariadb_credentials.yml
+#
+- name: Import task create_repo_rhel7.yml
+  import_tasks: create_repo_rhel7.yml
+  when: ansible_os_family == 'RedHat'
+#
+- name: Import task create_repo_deb.yml
+  import_tasks: create_repo_deb.yml
+  when: ansible_os_family == 'Debian'
+#
+- name: Import task install_packages_rhel7.yml
+  import_tasks: install_packages_rhel7.yml
+  when: ansible_os_family == 'RedHat'
+#
+- name: Import task install_packages_deb.yml
+  import_tasks: install_packages_deb.yml
+  when: ansible_os_family == 'Debian'
+#
+- name: Import task start_service.yml
+  import_tasks: start_service.yml
+#
+- name: Import task configure_mariadb.yml
+  import_tasks: configure_mariadb.yml
+#
+...

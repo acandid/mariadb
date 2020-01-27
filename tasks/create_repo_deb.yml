@@ -1,0 +1,19 @@
+---
+- name: Add an Apt signing key, uses whichever key is at the URL
+  apt_key:
+    url: 'https://mariadb.org/mariadb_release_signing_key.asc'
+    state: present
+#
+- name: Create Debian repository
+  blockinfile:
+    path: /etc/apt/sources.list
+    block: |
+      # MariaDB 10.4 repository list - created 2020-01-22 15:21 UTC
+      # http://downloads.mariadb.org/mariadb/repositories/
+      deb [arch=amd64] http://ftp.igh.cnrs.fr/pub/mariadb/repo/10.4/debian buster main
+      deb-src http://ftp.igh.cnrs.fr/pub/mariadb/repo/10.4/debian buster main
+#
+- name: Running apt-get update
+  apt:
+    update_cache: yes
+...

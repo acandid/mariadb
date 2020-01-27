@@ -1,0 +1,6 @@
+---
+- name: Install Red Hat packages
+  yum:
+    name: "{{ packages }}"
+    state: present
+...
